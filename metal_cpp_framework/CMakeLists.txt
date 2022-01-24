@@ -1,11 +1,8 @@
-
-
 project(metal_cpp)
 
 # aux_source_directory(${CMAKE_CURRENT_SOURCE_DIR}/Foundation foundation_source)
 # aux_source_directory(${CMAKE_CURRENT_SOURCE_DIR}/Metal metal_source)
 # aux_source_directory(${CMAKE_CURRENT_SOURCE_DIR}/QuartzCore quartz_core_source)
-
 
 add_library(${PROJECT_NAME} INTERFACE)
 add_library(engine::metal_cpp ALIAS ${PROJECT_NAME})
