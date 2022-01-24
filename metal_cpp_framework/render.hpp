@@ -3,11 +3,13 @@
 
 #pragma once
 
+#include <RENDER_API.h>
+
 #define NS_PRIVATE_IMPLEMENTATION
 #define CA_PRIVATE_IMPLEMENTATION
 #define MTL_PRIVATE_IMPLEMENTATION
 // #include "Metal.hpp"
 
-void RenderFunction();
+RENDER_API void RenderFunction();
 
 #endif /* _METAL_CPP_FRAMEWORK_RENDER_HPP */
