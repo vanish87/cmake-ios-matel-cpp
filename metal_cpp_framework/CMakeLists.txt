@@ -1,11 +1,14 @@
+# build metal cpp from apple dev
 add_subdirectory(metal_cpp)
 
-include(GenerateExportHeader)
-project(render)
+# build render that uses metal cpp
+# and make it as Framework
+project(render_framework)
 
 add_library(${PROJECT_NAME} render.cpp)
 add_library(engine::render ALIAS ${PROJECT_NAME})
 
+include(GenerateExportHeader)
 set(HEADER_NAME ${PROJECT_NAME})
 string(TOUPPER ${HEADER_NAME} HEADER_NAME)
 
@@ -27,6 +30,8 @@ target_link_libraries( ${PROJECT_NAME}
 
 set_target_properties(${PROJECT_NAME} PROPERTIES
   FRAMEWORK TRUE
+  # https://developer.apple.com/library/archive/documentation/MacOSX/Conceptual/BPFrameworks/Concepts/VersionInformation.html
+  # as Major verison
   FRAMEWORK_VERSION A
   MACOSX_FRAMEWORK_IDENTIFIER com.cmake.dynamicFramework
   MACOSX_FRAMEWORK_INFO_PLIST ${CMAKE_CURRENT_SOURCE_DIR}/framework.plist.in
