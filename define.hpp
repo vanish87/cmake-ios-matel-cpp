@@ -13,6 +13,7 @@
 	#define APP_PLATFORM_TARGET_DARWIN
 #endif
 
+//only use this for simulator check
 #if defined(TARGET_IPHONE_SIMULATOR)
 	#define APP_PLATFORM_TARGET_IOS_SIMULATOR
 #endif
