@@ -61,9 +61,9 @@
     // _renderer->drawInView(*view_);
 }
 
-- (void)keyDown:(NSEvent *)event
-{
-}
+//- (void)keyDown:(NSEvent *)event
+//{
+//}
 
 - (BOOL)acceptsFirstResponder
 {

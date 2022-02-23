@@ -11,6 +11,8 @@ void RenderFunction()
 	{
 		std::cout<<"GPU device create"<<std::endl;
 	}
+    //printf("%s", );
+    std::cout<<device->name()->cString(NS::UTF8StringEncoding)<<std::endl;
 
 	// delete device;
 }
