@@ -44,6 +44,7 @@
 }
 - (void)dealloc
 {
+    [super dealloc];
     // delete device_;
     // device_ = nullptr;
 

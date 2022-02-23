@@ -7,14 +7,14 @@
 #define APP_PLATFORM_BUILD_DARWIN
 
 //target(running) system is darwin or iOS/Simulator
-// #if defined(TARGET_OS_IPHONE) || defined(TARGET_IPHONE_SIMULATOR)
-// 	#define APP_PLATFORM_TARGET_IOS
-// #else
+#if TARGET_OS_IPHONE || TARGET_IPHONE_SIMULATOR
+ 	#define APP_PLATFORM_TARGET_IOS
+#else
 	#define APP_PLATFORM_TARGET_DARWIN
-// #endif
+#endif
 
 //only use this for simulator check
-#if defined(TARGET_IPHONE_SIMULATOR)
+#if TARGET_IPHONE_SIMULATOR
 	#define APP_PLATFORM_TARGET_IOS_SIMULATOR
 #endif
 
