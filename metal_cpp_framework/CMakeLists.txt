@@ -21,7 +21,7 @@ GENERATE_EXPORT_HEADER( ${PROJECT_NAME}
 
 target_include_directories( ${PROJECT_NAME}
     PUBLIC ${PROJECT_SOURCE_DIR}
-    PUBLIC ${metal_cpp_SOURCE_DIR}/SingleHeader/include
+    # PUBLIC ${metal_cpp_SOURCE_DIR}/SingleHeader/include
 )
 
 target_link_libraries( ${PROJECT_NAME}
