@@ -15,7 +15,7 @@ int main(int argc, const char * argv[])
     return NSApplicationMain(argc, argv);
 }
 #else
-int main(int argc, char * argv[])
+int main(int argc, const char * argv[])
 {
     @autoreleasepool {
         return UIApplicationMain(argc, argv, nil, NSStringFromClass([AppDelegate class]));
