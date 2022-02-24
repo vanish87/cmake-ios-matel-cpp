@@ -3,8 +3,14 @@ cmake_minimum_required(VERSION 3.13)
 option(BUILD_SHARED_LIBS "Build using shared libraries" ON)
 set(CMAKE_CXX_STANDARD 17)
 
-# set(CMAKE_SYSTEM_NAME iOS)
+add_subdirectory(metal_cpp_framework)
+
+project(main_app)
+
 option(BUILD_IOS "BUILD_IOS" ON)
+
+set(CMAKE_SYSTEM_NAME iOS)
+set(APP_BUNDLE_IDENTIFIER "com.vanish87.${PROJECT_NAME}") 
 
 if (BUILD_IOS)
   set(CMAKE_OSX_SYSROOT iphoneos)
@@ -13,16 +19,10 @@ else()
   set(OS_PREFIX macOS)
 endif()
 
-# set(APP_BUNDLE_IDENTIFIER "com.vanish87.test") 
-# set(MACOSX_BUNDLE_INFO_STRING ${APP_BUNDLE_IDENTIFIER})
-# set(MACOSX_BUNDLE_GUI_IDENTIFIER ${APP_BUNDLE_IDENTIFIER})
-# set(MACOSX_BUNDLE_BUNDLE_NAME ${APP_BUNDLE_IDENTIFIER})
-
 # set(CMAKE_XCODE_ATTRIBUTE_DEVELOPMENT_TEAM KH98AQQ5YQ)
 
 
 # if(APPLE)
-add_subdirectory(metal_cpp_framework)
 
 set(APP_HEADER_FILES
 	define.hpp
@@ -40,8 +40,6 @@ set(RESOURCES
   ${OS_PREFIX}/Main.storyboard
   # LaunchScreen.storyboard
 )
-
-project(main_app)
 
 add_executable(${PROJECT_NAME} 
 	MACOSX_BUNDLE
@@ -81,6 +79,7 @@ set_target_properties(${PROJECT_NAME} PROPERTIES
                     #   XCODE_ATTRIBUTE_CODE_SIGN_IDENTITY ${CODE_SIGN_IDENTITY}
                     #   XCODE_ATTRIBUTE_DEVELOPMENT_TEAM ${DEVELOPMENT_TEAM_ID}
                     #   XCODE_ATTRIBUTE_TARGETED_DEVICE_FAMILY ${DEVICE_FAMILY}
+                        MACOSX_BUNDLE_GUI_IDENTIFIER ${APP_BUNDLE_IDENTIFIER}
                         MACOSX_BUNDLE_INFO_PLIST ${CMAKE_CURRENT_SOURCE_DIR}/${OS_PREFIX}/plist.in
                     #   XCODE_ATTRIBUTE_CLANG_ENABLE_OBJC_ARC YES
                     #   XCODE_ATTRIBUTE_COMBINE_HIDPI_IMAGES NO
