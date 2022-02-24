@@ -21,7 +21,6 @@ GENERATE_EXPORT_HEADER( ${PROJECT_NAME}
 
 target_include_directories( ${PROJECT_NAME}
     PUBLIC ${PROJECT_SOURCE_DIR}
-    # PUBLIC ${metal_cpp_SOURCE_DIR}/SingleHeader/include
 )
 
 target_link_libraries( ${PROJECT_NAME}
@@ -40,5 +39,5 @@ set_target_properties(${PROJECT_NAME} PROPERTIES
   # "compatibility version" in semantic format in Mach-O binary file
   SOVERSION 1.0.0
   PUBLIC_HEADER ${CMAKE_CURRENT_SOURCE_DIR}/render.h
-  XCODE_ATTRIBUTE_CODE_SIGN_IDENTITY "iPhone Developer"
+  # XCODE_ATTRIBUTE_CODE_SIGN_IDENTITY "iPhone Developer"
 )
